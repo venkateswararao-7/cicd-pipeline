@@ -14,5 +14,10 @@ def add_employee():
     employees.append(name)
     return redirect('/')
 
+@app.route('/delete/<int:index>')
+def delete_employee(index):
+    employees.pop(index)
+    return redirect('/')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
